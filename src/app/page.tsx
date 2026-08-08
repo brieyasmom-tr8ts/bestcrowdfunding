@@ -115,8 +115,8 @@ function HandDrawnCheck() {
 function Header() {
   return (
     <header className="bg-white/90 backdrop-blur-sm border-b border-cream-dark sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/" className="text-xl font-bold text-primary font-sans">
+      <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
+        <a href="/" className="text-lg md:text-xl font-bold text-primary font-sans">
           BestCrowdfunding<span className="text-primary">.com</span>
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 font-sans">
@@ -134,10 +134,18 @@ function Header() {
           href="https://www.givesendgo.com/start"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors font-sans shadow-sm"
+          className="bg-primary text-white px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-primary-dark transition-colors font-sans shadow-sm"
         >
           Start a Campaign
         </a>
+      </div>
+      {/* Mobile nav links */}
+      <div className="md:hidden border-t border-cream-dark px-4 py-2 flex justify-center gap-4 text-xs font-medium text-gray-500 font-sans">
+        <a href="#compare" className="hover:text-primary transition-colors">Compare</a>
+        <span className="text-cream-dark">|</span>
+        <a href="#why-fees-matter" className="hover:text-primary transition-colors">Fees</a>
+        <span className="text-cream-dark">|</span>
+        <a href="#freedom" className="hover:text-primary transition-colors">Freedom</a>
       </div>
     </header>
   );
@@ -146,23 +154,23 @@ function Header() {
 function Hero() {
   return (
     <section
-      className="relative bg-primary text-white py-24 md:py-32 bg-cover bg-center"
+      className="relative bg-primary text-white py-16 md:py-32 bg-cover bg-center"
       style={{ backgroundImage: "url('/hero-bg.png')" }}
     >
       <div className="absolute inset-0 bg-primary/50" />
       <div className="relative max-w-4xl mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-lg">
+        <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-4 md:mb-6 drop-shadow-lg">
           Find the Best Crowdfunding Platform for Your Campaign
         </h1>
-        <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-base md:text-xl text-white/85 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed">
           We compared fees, features, freedom, and reviews across the top
           crowdfunding platforms so you don&apos;t have to. See which one comes
           out on top.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0">
           <a
             href="#compare"
-            className="bg-white text-primary font-bold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl font-sans"
+            className="bg-white text-primary font-bold px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl font-sans text-sm md:text-base"
           >
             Compare Platforms
           </a>
@@ -170,7 +178,7 @@ function Hero() {
             href="https://www.givesendgo.com/start"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white/15 transition-all font-sans"
+            className="border-2 border-white text-white font-bold px-6 md:px-8 py-3 md:py-3.5 rounded-full hover:bg-white/15 transition-all font-sans text-sm md:text-base"
           >
             Start Free Campaign
           </a>
