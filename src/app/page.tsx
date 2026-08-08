@@ -239,7 +239,7 @@ function ComparisonTable() {
                       <span className="font-bold text-lg">{p.name}</span>
                       {p.winner && (
                         <span className="bg-winner-border text-white text-xs font-bold px-2.5 py-1 rounded-full font-sans shadow-sm">
-                          BEST
+                          BEST OVERALL
                         </span>
                       )}
                     </div>
