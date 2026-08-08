@@ -130,8 +130,12 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-28">
-      <div className="max-w-4xl mx-auto px-4 text-center">
+    <section
+      className="relative bg-primary text-white py-20 md:py-28 bg-cover bg-center"
+      style={{ backgroundImage: "url('/hero-bg.png')" }}
+    >
+      <div className="absolute inset-0 bg-primary/50" />
+      <div className="relative max-w-4xl mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
           Find the Best Crowdfunding Platform for Your Campaign
         </h1>
