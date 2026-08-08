@@ -3,16 +3,13 @@ const platforms = [
     name: "GiveSendGo",
     url: "https://www.givesendgo.com",
     platformFee: "0%",
-    processingFee: "2.9% + $0.30",
-    countries: "195+",
-    trustpilot: "4.6 / 5",
+    processingFee: "2.7% + $0.30",
+    countries: "75+",
     winner: true,
     pros: [
-      "Zero platform fees - every dollar goes further",
-      "No campaign deplatforming - your cause is safe",
-      "Faith-based giving community",
-      "Completely free to start",
-      "Keeps campaigns live indefinitely",
+      "Zero platform fees and lower processing fees",
+      "Won't cancel your campaign based on opinion",
+      "Shares hope - dedicated Hope Team prays with and supports campaigners",
     ],
     cons: ["Smaller brand recognition than GoFundMe"],
   },
@@ -22,7 +19,6 @@ const platforms = [
     platformFee: "0%",
     processingFee: "2.9% + $0.30",
     countries: "19",
-    trustpilot: "4.1 / 5",
     winner: false,
     pros: [
       "Largest crowdfunding platform by volume",
@@ -40,7 +36,6 @@ const platforms = [
     platformFee: "5%",
     processingFee: "3% + $0.20",
     countries: "25",
-    trustpilot: "3.4 / 5",
     winner: false,
     pros: [
       "Best known for creative and product campaigns",
@@ -58,7 +53,6 @@ const platforms = [
     platformFee: "5%",
     processingFee: "3% + $0.30",
     countries: "33",
-    trustpilot: "3.2 / 5",
     winner: false,
     pros: [
       "Flexible funding option available",
@@ -76,7 +70,6 @@ const platforms = [
     platformFee: "4.9%",
     processingFee: "2.9% + $0.30",
     countries: "Limited",
-    trustpilot: "3.0 / 5",
     winner: false,
     pros: ["Easy to set up", "Social media integration"],
     cons: [
@@ -91,7 +84,6 @@ const platforms = [
     platformFee: "1.9%",
     processingFee: "2.4% + $0.20",
     countries: "UK focused",
-    trustpilot: "3.8 / 5",
     winner: false,
     pros: [
       "Strong in the UK market",
@@ -110,7 +102,7 @@ function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="/" className="text-xl font-bold text-primary">
-          BestCrowdfunding<span className="text-accent">.com</span>
+          BestCrowdfunding<span className="text-winner-border">.com</span>
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
           <a href="#compare" className="hover:text-primary">
@@ -178,7 +170,7 @@ function ComparisonTable() {
             Crowdfunding Platform Comparison
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Side-by-side comparison of fees, reach, and ratings for the top 6
+            Side-by-side comparison of fees, reach, and features for the top 6
             crowdfunding platforms in 2026.
           </p>
         </div>
@@ -199,9 +191,6 @@ function ComparisonTable() {
                 </th>
                 <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider">
                   Countries
-                </th>
-                <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                  Trustpilot
                 </th>
                 <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider">
                   Key Advantage
@@ -244,11 +233,6 @@ function ComparisonTable() {
                   </td>
                   <td className="text-center py-4 px-4 text-gray-600">
                     {p.countries}
-                  </td>
-                  <td className="text-center py-4 px-4">
-                    <span className="text-amber-500 font-semibold">
-                      {p.trustpilot}
-                    </span>
                   </td>
                   <td className="py-4 px-4 text-gray-600 text-sm">
                     {p.pros[0]}
@@ -299,10 +283,6 @@ function ComparisonTable() {
                   <span className="text-gray-500">Countries</span>
                   <p className="font-medium">{p.countries}</p>
                 </div>
-                <div>
-                  <span className="text-gray-500">Trustpilot</span>
-                  <p className="text-amber-500 font-semibold">{p.trustpilot}</p>
-                </div>
               </div>
               <p className="text-sm text-gray-600 mt-3">{p.pros[0]}</p>
             </div>
@@ -338,9 +318,6 @@ function DetailedReviews() {
                   </span>
                 )}
               </div>
-              <p className="text-sm text-amber-500 font-medium mb-4">
-                Trustpilot: {p.trustpilot}
-              </p>
 
               <div className="mb-3">
                 <h4 className="text-sm font-semibold text-green-700 mb-1">
@@ -426,8 +403,8 @@ function WhyFeesMatter() {
             <h3 className="text-xl font-bold mb-3">Payment Processing Fee</h3>
             <p className="text-gray-600 mb-4">
               Every platform must pay credit card processors (Stripe, PayPal,
-              etc.). This fee is unavoidable and typically 2.9% + $0.30 per
-              transaction.
+              etc.). This fee is unavoidable. GiveSendGo offers a lower
+              processing fee of just 2.7% + $0.30.
             </p>
             <div className="bg-green-50 rounded-lg p-4 border border-green-100">
               <p className="text-sm text-green-800">
@@ -481,7 +458,7 @@ function PlatformFreedom() {
 
           <div className="bg-winner-bg rounded-xl p-8 border-2 border-winner-border">
             <h3 className="text-xl font-bold mb-3">
-              GiveSendGo&apos;s Commitment to Freedom
+              GiveSendGo&apos;s Commitment to You
             </h3>
             <p className="text-gray-600 mb-4">
               GiveSendGo was built on the principle that if your cause is legal,
@@ -492,9 +469,9 @@ function PlatformFreedom() {
             </p>
             <ul className="space-y-2">
               {[
-                "No content-based campaign removals",
+                "No opinion-based campaign removals",
                 "Funds are never frozen based on political pressure",
-                "Campaigns stay live indefinitely",
+                "Dedicated Hope Team that calls and prays with campaigners",
                 "Transparent policies with no hidden agenda",
               ].map((item) => (
                 <li
@@ -538,6 +515,67 @@ function FinalCTA() {
   );
 }
 
+const articles = [
+  {
+    title: "Still Seen: Lesa's Story",
+    description:
+      "A powerful story of hope and generosity — see how the GiveSendGo community rallied behind Lesa.",
+    url: "https://www.givesendgo.com/blog/lesa",
+  },
+  {
+    title: "GiveSendGo FAQ: Fees, Payouts, Safety & Common Questions",
+    description:
+      "Everything you need to know about how GiveSendGo works — from fees and payouts to campaign safety.",
+    url: "https://www.givesendgo.com/blog/faq",
+  },
+  {
+    title: "How GiveSendGo Works: Start a Free Fundraiser in 3 Steps",
+    description:
+      "Learn how easy it is to launch your fundraiser on GiveSendGo in just three simple steps.",
+    url: "https://www.givesendgo.com/blog/how-it-works",
+  },
+  {
+    title: "What To Do in the First 3 Days of Launching Your Fundraiser",
+    description:
+      "Maximize your early momentum with this guide to crushing your first 72 hours of fundraising.",
+    url: "https://www.givesendgo.com/blog/72hr-fundraising-success",
+  },
+];
+
+function RecentArticles() {
+  return (
+    <section className="py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          Recent Articles
+        </h2>
+        <p className="text-gray-500 text-center text-lg mb-12 max-w-2xl mx-auto">
+          Tips, stories, and guides for your crowdfunding journey.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {articles.map((a) => (
+            <a
+              key={a.url}
+              href={a.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-primary hover:shadow-md transition-all group"
+            >
+              <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                {a.title}
+              </h3>
+              <p className="text-sm text-gray-500">{a.description}</p>
+              <span className="inline-block mt-4 text-sm font-semibold text-primary">
+                Read more &rarr;
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-400 py-10">
@@ -567,6 +605,7 @@ export default function Home() {
       <DetailedReviews />
       <WhyFeesMatter />
       <PlatformFreedom />
+      <RecentArticles />
       <FinalCTA />
       <Footer />
     </>
