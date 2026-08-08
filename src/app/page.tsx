@@ -492,7 +492,7 @@ function PlatformFreedom() {
               <div>
                 <h3 className="text-xl font-bold mb-3">The Deplatforming Risk</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Major platforms like GoFundMe have removed campaigns for legal
+                  Some major platforms have removed campaigns for legal
                   causes based on political pressure. When your campaign gets taken
                   down, you lose your momentum, your donors, and sometimes your
                   funds. This can happen at any point &mdash; even after
