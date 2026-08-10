@@ -1,17 +1,22 @@
 const platforms = [
   {
     name: "GiveSendGo",
+    badge: "BEST OVERALL",
     url: "https://www.givesendgo.com",
     platformFee: "0%",
     processingFee: "2.7% + $0.30",
-    countries: "75+",
+    bestFor: "Personal causes, emergencies, missions, faith-based causes & community fundraising",
+    category: "donation",
+    prayerFeatures: true,
     winner: true,
     pros: [
-      "Zero platform fees and lower processing fees",
-      "Won't cancel your campaign based on opinion",
-      "Shares hope - dedicated Hope Team prays with and supports campaigners",
-      "Campaigners own their donor list and contacts",
-      "Supports recurring donations from givers",
+      "0% platform fee — more of every dollar reaches your cause",
+      "Lower U.S. processing fee than GoFundMe (2.7% vs 2.9%)",
+      "Built-in prayer and encouragement features for donors and campaigners",
+      "Faith-friendly platform that welcomes all legal causes",
+      "No penalty for not reaching your goal — keep what you raise",
+      "No campaign deadline requirement",
+      "Platform supported by optional donor tips, not a mandatory percentage",
     ],
     cons: [
       "Smaller brand recognition than GoFundMe",
@@ -20,84 +25,79 @@ const platforms = [
   },
   {
     name: "GoFundMe",
+    badge: "BEST FOR BRAND RECOGNITION",
     url: "https://www.gofundme.com",
     platformFee: "0%",
     processingFee: "2.9% + $0.30",
-    countries: "19",
+    bestFor: "Mainstream personal and emergency fundraising",
+    category: "donation",
+    prayerFeatures: false,
     winner: false,
     pros: [
-      "Largest crowdfunding platform by volume",
-      "Strong brand recognition",
+      "Very large, well-known fundraising platform",
+      "Strong brand recognition and donor trust",
     ],
     cons: [
-      "Has deplatformed campaigns based on content",
-      "Limited to 19 countries",
-      "Aggressive tipping prompts to donors",
+      "Higher U.S. transaction fee than GiveSendGo",
+      "Does not offer prayer-centered community features",
     ],
   },
   {
-    name: "Kickstarter",
-    url: "https://www.kickstarter.com",
-    platformFee: "5%",
-    processingFee: "3% + $0.20",
-    countries: "25",
+    name: "LaunchGood",
+    badge: "BEST FOR MUSLIM COMMUNITY FUNDRAISING",
+    url: "https://www.launchgood.com",
+    platformFee: "Varies",
+    processingFee: "Varies",
+    bestFor: "Muslim causes, Ramadan giving & community fundraising",
+    category: "donation",
+    prayerFeatures: false,
     winner: false,
     pros: [
-      "Best known for creative and product campaigns",
-      "Large backer community",
+      "Strong community around Muslim causes and giving seasons",
+      "Trusted platform for Ramadan and faith-driven campaigns",
     ],
     cons: [
-      "5% platform fee is steep",
-      "All-or-nothing funding model",
-      "Not suitable for personal fundraising",
-    ],
-  },
-  {
-    name: "Indiegogo",
-    url: "https://www.indiegogo.com",
-    platformFee: "5%",
-    processingFee: "3% + $0.30",
-    countries: "33",
-    winner: false,
-    pros: [
-      "Flexible funding option available",
-      "Good for tech and innovation projects",
-    ],
-    cons: [
-      "5% platform fee",
-      "Lower traffic than Kickstarter",
-      "InDemand program can feel misleading",
-    ],
-  },
-  {
-    name: "Fundly",
-    url: "https://www.fundly.com",
-    platformFee: "4.9%",
-    processingFee: "2.9% + $0.30",
-    countries: "Limited",
-    winner: false,
-    pros: ["Easy to set up", "Social media integration"],
-    cons: [
-      "4.9% platform fee is one of the highest",
-      "Dated interface",
-      "Limited international support",
+      "Focused primarily on Muslim community fundraising",
+      "Smaller global footprint than general-purpose platforms",
     ],
   },
   {
     name: "JustGiving",
+    badge: "BEST FOR UK CHARITY FUNDRAISING",
     url: "https://www.justgiving.com",
-    platformFee: "1.9%",
-    processingFee: "2.4% + $0.20",
-    countries: "UK focused",
+    platformFee: "0%",
+    processingFee: "Varies by type",
+    bestFor: "UK charities and charity fundraising",
+    category: "donation",
+    prayerFeatures: false,
     winner: false,
     pros: [
-      "Strong in the UK market",
-      "Good for charity and nonprofit fundraising",
+      "Strong in the UK charity market with deep nonprofit integrations",
+      "No platform fee for fundraisers",
     ],
     cons: [
-      "1.9% platform fee",
       "Primarily UK-focused",
-      "Less suitable for personal campaigns",
+      "Processing fees vary by fundraiser type and payment method",
+    ],
+  },
+  {
+    name: "Kickstarter",
+    badge: "BEST FOR CREATIVE PROJECTS",
+    url: "https://www.kickstarter.com",
+    platformFee: "5%",
+    processingFee: "3% + $0.30",
+    bestFor: "Products, games, films and creative projects",
+    category: "rewards",
+    prayerFeatures: false,
+    winner: false,
+    pros: [
+      "Best-known platform for creative and product campaigns",
+      "Large backer community for rewards-based projects",
+    ],
+    cons: [
+      "5% platform fee on successfully funded projects",
+      "All-or-nothing model — you get nothing if you miss your goal",
+      "Rewards/project crowdfunding, not donation-based fundraising",
     ],
   },
 ];
@@ -188,133 +188,210 @@ function Hero() {
   );
 }
 
+function FeaturedGiveSendGo() {
+  const gsg = platforms[0];
+  return (
+    <div className="bg-winner-bg border-2 border-winner-border rounded-2xl p-8 md:p-10 mb-12 shadow-md relative">
+      <span className="absolute -top-3.5 left-6 bg-winner-border text-white text-xs font-bold px-4 py-1.5 rounded-full font-sans shadow-sm uppercase tracking-wide">
+        Best Overall
+      </span>
+      <div className="flex flex-col md:flex-row md:items-start md:gap-10">
+        <div className="flex-1">
+          <h3 className="text-2xl md:text-3xl font-bold mb-2 mt-2">{gsg.name}</h3>
+          <p className="text-gray-600 mb-5">{gsg.bestFor}</p>
+          <div className="flex flex-wrap gap-6 mb-6">
+            <div>
+              <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider font-sans">Platform Fee</span>
+              <p className="text-green-600 font-bold text-2xl">{gsg.platformFee}</p>
+            </div>
+            <div>
+              <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider font-sans">U.S. Processing Fee</span>
+              <p className="font-bold text-xl text-gray-800">{gsg.processingFee}</p>
+            </div>
+          </div>
+          <ul className="space-y-2.5 mb-6">
+            {gsg.pros.map((pro) => (
+              <li key={pro} className="flex items-start gap-2.5 text-sm text-gray-700">
+                <HandDrawnCheck />
+                <span>{pro}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="flex-shrink-0 md:mt-6">
+          <a
+            href="https://www.givesendgo.com/start"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-primary text-white font-bold px-8 py-3.5 rounded-full text-base hover:bg-primary-dark transition-colors font-sans shadow-lg hover:shadow-xl"
+          >
+            Start a GiveSendGo
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ComparisonGrid() {
+  const gridPlatforms = platforms;
+  return (
+    <>
+      {/* Desktop Grid */}
+      <div className="hidden lg:block sketch-card p-6 overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="sketch-row-border">
+              <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
+                Platform
+              </th>
+              <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
+                Best For
+              </th>
+              <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
+                Platform Fee
+              </th>
+              <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
+                U.S. Processing Fee
+              </th>
+              <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
+                Faith / Prayer Features
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {gridPlatforms.map((p) => (
+              <tr
+                key={p.name}
+                className={
+                  p.winner
+                    ? "bg-winner-bg border-2 border-winner-border"
+                    : "sketch-row-border hover:bg-cream/50"
+                }
+              >
+                <td className="py-5 px-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-bold text-lg">{p.name}</span>
+                    {p.winner && (
+                      <span className="bg-winner-border text-white text-[10px] font-bold px-2 py-0.5 rounded-full font-sans shadow-sm">
+                        BEST
+                      </span>
+                    )}
+                    {p.category === "rewards" && (
+                      <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full font-sans">
+                        REWARDS
+                      </span>
+                    )}
+                  </div>
+                </td>
+                <td className="py-5 px-4 text-gray-600 text-sm max-w-[220px]">
+                  {p.bestFor}
+                </td>
+                <td className="text-center py-5 px-4">
+                  <span
+                    className={
+                      p.platformFee === "0%"
+                        ? "text-green-600 font-bold text-lg"
+                        : p.platformFee === "Varies"
+                        ? "text-gray-500 font-medium"
+                        : "text-red-500 font-semibold text-lg"
+                    }
+                  >
+                    {p.platformFee}
+                  </span>
+                </td>
+                <td className="text-center py-5 px-4 text-gray-600">
+                  {p.processingFee}
+                </td>
+                <td className="text-center py-5 px-4">
+                  {p.prayerFeatures ? (
+                    <span className="text-winner-border font-bold text-lg" title="Prayer + encouragement">&#10003; Prayer + encouragement</span>
+                  ) : (
+                    <span className="text-gray-400">&mdash;</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile Cards */}
+      <div className="lg:hidden space-y-4">
+        {gridPlatforms.map((p) => (
+          <div
+            key={p.name}
+            className={`sketch-card p-5 ${
+              p.winner
+                ? "!border-2 !border-winner-border bg-winner-bg"
+                : ""
+            }`}
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <h3 className="font-bold text-lg">{p.name}</h3>
+              {p.winner && (
+                <span className="bg-winner-border text-white text-xs font-bold px-2.5 py-0.5 rounded-full font-sans">
+                  BEST
+                </span>
+              )}
+              {p.category === "rewards" && (
+                <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded-full font-sans">
+                  REWARDS
+                </span>
+              )}
+            </div>
+            <p className="text-sm text-gray-500 mb-3">{p.bestFor}</p>
+            <div className="grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <span className="text-gray-500 font-sans text-xs uppercase tracking-wide">Platform Fee</span>
+                <p
+                  className={
+                    p.platformFee === "0%"
+                      ? "text-green-600 font-bold text-lg"
+                      : p.platformFee === "Varies"
+                      ? "text-gray-500 font-medium"
+                      : "text-red-500 font-semibold text-lg"
+                  }
+                >
+                  {p.platformFee}
+                </p>
+              </div>
+              <div>
+                <span className="text-gray-500 font-sans text-xs uppercase tracking-wide">U.S. Processing</span>
+                <p className="font-medium">{p.processingFee}</p>
+              </div>
+            </div>
+            <div className="mt-2 text-sm">
+              <span className="text-gray-500 font-sans text-xs uppercase tracking-wide">Prayer Features</span>
+              <p>{p.prayerFeatures ? <span className="text-winner-border font-semibold">&#10003; Prayer + encouragement</span> : <span className="text-gray-400">&mdash;</span>}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p className="text-xs text-gray-400 mt-6 text-center max-w-3xl mx-auto leading-relaxed">
+        Fees shown are based on publicly available U.S. pricing where applicable and may vary by country, currency, fundraiser type, payment method, or other factors. Always check each platform&apos;s current pricing.
+      </p>
+    </>
+  );
+}
+
 function ComparisonTable() {
   return (
     <section id="compare" className="wave-divider pt-24 pb-16 md:pt-28 md:pb-24">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="sketch-underline">Crowdfunding Platform Comparison</span>
+            <span className="sketch-underline">Compare the Best Crowdfunding Platforms</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto mt-6">
-            Side-by-side comparison of fees, reach, and features for the top 6
-            crowdfunding platforms in 2026.
+            Not every crowdfunding platform is built for the same purpose. Compare
+            fees, focus, and features to find the right place to raise support.
           </p>
         </div>
 
-        {/* Desktop Table */}
-        <div className="hidden lg:block sketch-card p-6 overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="sketch-row-border">
-                <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
-                  Platform
-                </th>
-                <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
-                  Platform Fee
-                </th>
-                <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
-                  Processing Fee
-                </th>
-                <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
-                  Countries
-                </th>
-                <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider font-sans">
-                  Key Advantage
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {platforms.map((p) => (
-                <tr
-                  key={p.name}
-                  className={
-                    p.winner
-                      ? "bg-winner-bg border-2 border-winner-border"
-                      : "sketch-row-border hover:bg-cream/50"
-                  }
-                >
-                  <td className="py-5 px-4">
-                    <div className="flex items-center gap-3">
-                      <span className="font-bold text-lg">{p.name}</span>
-                      {p.winner && (
-                        <span className="bg-winner-border text-white text-xs font-bold px-2.5 py-1 rounded-full font-sans shadow-sm">
-                          BEST OVERALL
-                        </span>
-                      )}
-                    </div>
-                  </td>
-                  <td className="text-center py-5 px-4">
-                    <span
-                      className={
-                        p.platformFee === "0%"
-                          ? "text-green-600 font-bold text-lg"
-                          : "text-red-500 font-semibold text-lg"
-                      }
-                    >
-                      {p.platformFee}
-                    </span>
-                  </td>
-                  <td className="text-center py-5 px-4 text-gray-600">
-                    {p.processingFee}
-                  </td>
-                  <td className="text-center py-5 px-4 text-gray-600">
-                    {p.countries}
-                  </td>
-                  <td className="py-5 px-4 text-gray-600 text-sm">
-                    {p.pros[0]}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Mobile Cards */}
-        <div className="lg:hidden space-y-4">
-          {platforms.map((p) => (
-            <div
-              key={p.name}
-              className={`sketch-card p-5 ${
-                p.winner
-                  ? "!border-2 !border-winner-border bg-winner-bg"
-                  : ""
-              }`}
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <h3 className="font-bold text-lg">{p.name}</h3>
-                {p.winner && (
-                  <span className="bg-winner-border text-white text-xs font-bold px-2.5 py-1 rounded-full font-sans">
-                    BEST
-                  </span>
-                )}
-              </div>
-              <div className="grid grid-cols-2 gap-3 text-sm">
-                <div>
-                  <span className="text-gray-500 font-sans text-xs uppercase tracking-wide">Platform Fee</span>
-                  <p
-                    className={
-                      p.platformFee === "0%"
-                        ? "text-green-600 font-bold text-lg"
-                        : "text-red-500 font-semibold text-lg"
-                    }
-                  >
-                    {p.platformFee}
-                  </p>
-                </div>
-                <div>
-                  <span className="text-gray-500 font-sans text-xs uppercase tracking-wide">Processing Fee</span>
-                  <p className="font-medium">{p.processingFee}</p>
-                </div>
-                <div>
-                  <span className="text-gray-500 font-sans text-xs uppercase tracking-wide">Countries</span>
-                  <p className="font-medium">{p.countries}</p>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 mt-3">{p.pros[0]}</p>
-            </div>
-          ))}
-        </div>
+        <FeaturedGiveSendGo />
+        <ComparisonGrid />
       </div>
     </section>
   );
@@ -339,7 +416,7 @@ function DetailedReviews() {
                   : "bg-cream sketch-card hover:shadow-md"
               }`}
             >
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-1">
                 <h3 className="text-xl font-bold">{p.name}</h3>
                 {p.winner && (
                   <span className="bg-winner-border text-white text-xs font-bold px-2.5 py-1 rounded-full font-sans">
@@ -347,10 +424,11 @@ function DetailedReviews() {
                   </span>
                 )}
               </div>
+              <p className="text-xs text-gray-400 font-sans uppercase tracking-wider mb-4">{p.badge}</p>
 
               <div className="mb-4">
                 <h4 className="text-xs font-bold text-green-700 mb-2 uppercase tracking-wider font-sans">
-                  Pros
+                  Strengths
                 </h4>
                 <ul className="space-y-2">
                   {p.pros.map((pro) => (
@@ -367,7 +445,7 @@ function DetailedReviews() {
 
               <div>
                 <h4 className="text-xs font-bold text-red-700 mb-2 uppercase tracking-wider font-sans">
-                  Cons
+                  Limitations
                 </h4>
                 <ul className="space-y-2">
                   {p.cons.map((con) => (
